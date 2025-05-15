@@ -1,0 +1,40 @@
+import random 
+
+#setting the score to 0
+score = 0
+rolls = []
+
+#welcoming the player and gives the goal
+print("Welcome to the game.")
+print("Your goal is to roll the die and get atleast 50 or above. Good luck!")
+
+#when score less than 50 the player should input a number from 1 to 6 until result is 50
+while score < 50:
+    input("Type roll to roll the dice: ")
+    die = random.randint(1, 6)
+    score += die #increasing the score of the die
+    rolls.append(die) #updating the score 
+
+    print(f"Your result: {die}")
+    print(f"Your total score is: {score}")
+
+#Congratulates the player for getting 50 or above
+print("Congrats for reaching a score of 50 or above!")
+
+#Asks is the player wants to see the history of rolls
+show_history = input("Do you want to see the history of your rolls? (yes/no): ").strip().lower()
+
+# Display the history if player asks for it
+if show_history == 'yes':
+    print("History of your rolls:")
+    for index, roll in enumerate(rolls, start=1):
+        print(f"Roll {index}: {roll}")    
+else:
+    print("Thanks for playing!")
+        
+
+
+
+
+
+
